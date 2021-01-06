@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h2 id="title">Node.contains</h2>
+
+    <ul id="myList">
+        <li>Item #1</li>
+        <li>Item #2 <strong class="myStrong">some bold text</strong> </li>
+    </ul>
+    
+    <script>
+        const title = document.getElementById('title');
+        const myList = document.getElementById("myList");
+        const listItem2 = myList.querySelector('li:nth-child(2)');
+        const myStrong = myList.querySelector('strong');
+        const result = myList.contains(myStrong);
+        console.log(result);
+
+        const resultTile = document.contains(title);
+        console.log(resultTile);
+        
+        
+    </script>
+</body>
+</html>
