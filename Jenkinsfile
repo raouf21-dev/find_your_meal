@@ -1,7 +1,7 @@
 pipeline {
     agent any 
     stages {
-        stage("test"){
+        stage("Run Shell Command"){
             steps {
                 sh 'echo "Hello Jenkins!"'
             }
