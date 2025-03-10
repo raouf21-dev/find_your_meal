@@ -6,7 +6,7 @@ pipeline {
                 script {
                     echo "TEST...." // Jenkins' built-in echo
                 }
-                python3 python.py
+                sh 'python3 python.py'
             }
         }
     }
