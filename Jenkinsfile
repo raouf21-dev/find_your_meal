@@ -1,12 +1,30 @@
 pipeline {
-    agent any 
+    agent { 
+        node {
+            label 'jenkins-agent-alpine'
+            }
+      }
     stages {
-        stage("Run python Command"){
+        stage('Build') {
             steps {
-                script {
-                    echo "TEST..." // Jenkins' built-in echo
-                }
-                sh 'python3 python.py'
+                echo "Building.."
+                sh 'echo "doing build stuff.."'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo "Testing.."
+                sh '''
+                echo "doing test stuff..
+                '''
+            }
+        }
+        stage('Deliver') {
+            steps {
+                echo 'Deliver....'
+                sh '''
+                echo "doing delivery stuff.."
+                '''
             }
         }
     }
