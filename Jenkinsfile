@@ -4,7 +4,7 @@ pipeline {
         stage("Run Shell Command"){
             steps {
                 script {
-                    echo "TEST..." // Jenkins' built-in echo
+                    echo "TEST...." // Jenkins' built-in echo
                 }
                 sh 'echo "Hello Jenkins!"'
             }
