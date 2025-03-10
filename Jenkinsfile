@@ -1,12 +1,19 @@
 pipeline {
-    agent any 
+    agent any
     stages {
-        stage("Run Shell Command"){
+        stage('Build') {
             steps {
-                script {
-                    echo "TEST...." // Jenkins' built-in echo
-                }
-                sh 'echo "Hello Jenkins!"'
+                echo 'Building...'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Running tests...'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying...'
             }
         }
     }
