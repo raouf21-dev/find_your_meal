@@ -41,21 +41,17 @@ pipeline {
             }
         }
         stage('Deploy') {
-            steps {
-                script {
-                    echo 'Deploy....'
-                    sh '''
-                    echo "doing deploying stuff.."
-                    '''
-                    echo "Building version: ${params.VERSION}"
 
-                    input(
-                        message: "Select the environment to deploy to",
-                        ok: "Done",
-                        parameters:[
-                        choice(name: "ENV", choices: ['dev', 'staging', 'prod'], description: "Select the environment")
-                        ]
-                    )
+            input(
+                message: "Select the environment to deploy to",
+                ok: "Done",
+                parameters:[
+                choice(name: "ENV", choices: ['dev', 'staging', 'prod'], description: "Select the environment")
+                ]
+            )
+            steps{
+                script{
+                    echo "Building version: ${params.VERSION}"
                     echo "deploying to ${ENV}"
                 }
             }
