@@ -56,10 +56,7 @@ pipeline {
                         choice(name: "ENV", choices: ['dev', 'staging', 'prod'], description: "Select the environment")
                         ]
                     )
-
-                    steps{
-                        echo "deploying to ${ENV}"
-                    }
+                    echo "deploying to ${ENV}"
                 }
             }
         }
