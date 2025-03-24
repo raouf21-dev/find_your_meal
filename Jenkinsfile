@@ -34,7 +34,6 @@ pipeline {
             }
             steps{
                 testApp()
-                
             }
         }
         stage('Deploy') {
