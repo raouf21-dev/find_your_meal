@@ -6,7 +6,7 @@ pipeline {
         }
         parameters {
             string(name: 'VERSION', defaultValue: ' ', description: 'Test for string')
-            choice(name: 'VERSION', choices['1.1.0', '1.3.0', '1.2.1'], description: 'Test for choice')
+            choice(name: 'VERSION', choices: ['1.1.0', '1.3.0', '1.2.1'], description: 'Test for choice')
             booleanParam(name: 'executeTests', defaultValue: true, description: 'Test for boolean')
         }
     stages {
@@ -19,21 +19,18 @@ pipeline {
             }
         }
         stage('Test') {
-            steps {
-                script {
-                    echo "Testing.."
-                    sh '''
-                    echo "doing test stuff.."
-                    '''
+            when{
+                expression{
+                    parameters.executeTests
                 }
             }
         }
-        stage('Deliver') {
+        stage('Deploy') {
             steps {
                 script {
-                    echo 'Deliver....'
+                    echo 'Deploy....'
                     sh '''
-                    echo "doing delivery stuff.."
+                    echo "doing deploying stuff.."
                     '''
                 }
             }
