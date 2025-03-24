@@ -3,8 +3,6 @@ def buildApp(){
 }
 
 def testApp(){
-    script {
-        echo "Testing the application..."
-    }
+    sh 'echo "Testing the application..."'
 }
 return this
