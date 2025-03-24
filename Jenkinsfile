@@ -14,7 +14,7 @@ pipeline {
             steps {
                 script {
                     echo "Initializing pipeline..."
-                    load 'scripts/script.groovy'
+                    load 'script.groovy'
                 }
             }    
         }
