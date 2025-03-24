@@ -24,6 +24,9 @@ pipeline {
                     parameters.executeTests = false
                 }
             }
+            steps{
+                echo "Testing in progress...."
+            }
         }
         stage('Deploy') {
             steps {
