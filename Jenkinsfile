@@ -33,7 +33,9 @@ pipeline {
                 }
             }
             steps{
-                myScript.testApp()
+                script{
+                    myScript.testApp()
+                }
             }
         }
         stage('Deploy') {
