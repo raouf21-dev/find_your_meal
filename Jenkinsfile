@@ -51,7 +51,7 @@ pipeline {
                         ]
                     )
                         echo "Building version: ${params.VERSION}"
-                        echo "deploying to ${deployEnv.ENV}"
+                        echo "deploying to ${deployEnv}"
                 }
             }
         }
