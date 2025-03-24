@@ -10,6 +10,14 @@ pipeline {
             booleanParam(name: 'executeTests', defaultValue: true, description: 'Test for boolean')
         }
     stages {
+        stage("init"){
+            steps {
+                script {
+                    echo "Initializing pipeline..."
+                    initPipeline()
+                }
+            }    
+        }
         stage('Build') {
             steps {
                 script {
@@ -25,7 +33,8 @@ pipeline {
                 }
             }
             steps{
-                echo "Testing in progress...."
+                testApp()
+                
             }
         }
         stage('Deploy') {
@@ -35,6 +44,8 @@ pipeline {
                     sh '''
                     echo "doing deploying stuff.."
                     '''
+                    echo "Building version: ${params.VERSION}"
+
                 }
             }
         }
