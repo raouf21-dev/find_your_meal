@@ -1,3 +1,5 @@
+
+def gv
 pipeline {
     agent { 
         node {
@@ -14,7 +16,7 @@ pipeline {
             steps {
                 script {
                     echo "Initializing pipeline..."
-                    def myScript = load 'script.groovy'
+                    gv = load 'script.groovy'
                 }
             }    
         }
@@ -34,7 +36,7 @@ pipeline {
             }
             steps{
                 script{
-                    myScript.testApp()
+                    gv.testApp()
                 }
             }
         }
