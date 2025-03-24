@@ -14,7 +14,7 @@ pipeline {
             steps {
                 script {
                     echo "Initializing pipeline..."
-                    load 'script.groovy'
+                    def myScript = load 'script.groovy'
                 }
             }    
         }
@@ -33,7 +33,7 @@ pipeline {
                 }
             }
             steps{
-                testApp()
+                myScript.testApp()
             }
         }
         stage('Deploy') {
